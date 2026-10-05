@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F0F0F0">
+<title>Ledgerview — Turn a spreadsheet, a photo or a prompt into a dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-route="home">
+<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <a class="wordmark" href="#home"><span class="wordmark-dot" aria-hidden="true"></span>Ledgerview</a>
+
+  <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel">
+    <span></span><span></span>
+  </button>
+
+  <nav class="nav" id="nav-panel" aria-label="Primary">
+    <a class="nav-link" data-view="home" href="#home">Home</a>
+    <a class="nav-link" data-view="features" href="#features">Features</a>
+    <a class="nav-link" data-view="solutions" href="#solutions">Solutions</a>
+    <a class="nav-link" data-view="pricing" href="#pricing">Pricing</a>
+    <a class="nav-link" data-view="dashboard" href="#dashboard">Dashboard</a>
+    <a class="nav-link" data-view="about" href="#about">About</a>
+    <span class="nav-auth" id="nav-auth"><a class="nav-cta" data-view="signup" href="#signup">Sign up</a></span>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ HOME ============ -->
+  <section id="view-home" class="view view-home" hidden>
+
+    <section class="hero">
+      <p class="hero-live"><span class="live-dot" aria-hidden="true"></span><span id="hero-rows">0</span> rows parsed just now</p>
+
+      <h1 class="hero-title">
+        <span class="line line-eyebrow"><span class="run">Turning spreadsheets into</span></span>
+        <span class="line line-big line-big-brand"><span class="run">INSTANT</span></span>
+        <span class="line line-big line-big-brand"><span class="run">DASHBOARDS</span></span>
+      </h1>
+
+      <p class="hero-copy">Ledgerview reads a CSV, a photo of a table, or a plain-language
+        description, tidies up whatever is messy, works out what each column means, and lays it
+        out as charts. Log in and it remembers your work.</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-ink" href="#signup" data-view="signup">Start for free</a>
+        <a class="btn btn-line" href="#solutions" data-view="solutions">See dashboard examples</a>
+      </div>
+
+      <div class="hero-chart" aria-hidden="true">
+        <svg viewBox="0 0 220 220" class="hero-chart-svg">
+          <defs>
+            <clipPath id="panelClip"><rect x="0" y="0" width="220" height="220" rx="18"/></clipPath>
+            <linearGradient id="barGradient" gradientUnits="userSpaceOnUse" x1="0" y1="220" x2="0" y2="0">
+              <stop offset="0%" stop-color="#FF4B3E"/>
+              <stop offset="55%" stop-color="#fffb00"/>
+              <stop offset="100%" stop-color="#00a6ff"/>
+            </linearGradient>
+          </defs>
+          <g clip-path="url(#panelClip)">
+            <rect width="220" height="220" fill="#0D0D0F"/>
+            <g id="hero-bars"></g>
+          </g>
+        </svg>
+      </div>
+
+      <p class="hero-scroll">Scroll</p>
+      <p class="hero-clock" id="hero-clock" aria-hidden="true"></p>
+    </section>
+
+    <section class="strip reveal">
+      <p class="strip-label">Built for the way small teams already work</p>
+      <ul class="strip-list">
+        <li>Home bakers</li><li>Freelance studios</li><li>Sales teams</li>
+        <li>Campus clubs</li><li>Solo founders</li><li>Local shops</li>
+      </ul>
+    </section>
+
+    <section class="steps">
+      <h2 class="section-title reveal">Three steps, no manual</h2>
+      <ol class="steps-list">
+        <li class="steps-item reveal">
+          <span class="steps-num">1</span>
+          <h3>Drop in a CSV or an image</h3>
+          <p>Drag in a CSV export, a screenshot or a photo of a printed table, or paste rows. Messy layouts, stray totals and typos are tidied for you.</p>
+        </li>
+        <li class="steps-item reveal">
+          <span class="steps-num">2</span>
+          <h3>Ledgerview reads it</h3>
+          <p>Every column is checked and labelled as a number, a category or a date, so the right chart type is suggested automatically.</p>
+        </li>
+        <li class="steps-item reveal">
+          <span class="steps-num">3</span>
+          <h3>Arrange and share</h3>
+          <p>Pick the charts that matter, drag them into place, and export the result as an image or a page you can send on.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="quote reveal">
+      <blockquote>
+        <p>I stopped rebuilding the same three pivot tables every Monday. Now I just drop in the sales export and the dashboard is already there.</p>
+        <cite>— an independent sales consultant, three-person team</cite>
+      </blockquote>
+    </section>
+
+    <section class="cta-band reveal">
+      <h2>Your next report is one CSV away.</h2>
+      <a class="btn btn-paper" href="#signup" data-view="signup">Create your first dashboard</a>
+    </section>
+
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section id="view-features" class="view" hidden>
+    <div class="page-hero">
+      <h1 class="page-title">
+        <span class="line line-eyebrow"><span class="run">Features</span></span>
+        <span class="line line-big"><span class="run">LEDGERVIEW</span></span>
+      </h1>
+      <p class="page-sub">Built for teams who turn numbers into decisions, not for data engineers.</p>
+      <p class="page-scroll">Scroll</p>
+    </div>
+
+    <section class="grid-section">
+      <div class="feat-grid">
+        <article class="feat-card reveal">
+          <svg class="feat-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 30 L8 10 M20 30 L20 4 M32 30 L32 16" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+          <h3>Auto-detects your columns</h3>
+          <p>Numbers, categories and dates are recognised on the way in, so the first chart is already correct.</p>
+        </article>
+        <article class="feat-card reveal">
+          <svg class="feat-icon" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15" stroke="currentColor" stroke-width="3" fill="none"/><path d="M20 5 A15 15 0 0 1 33 27" stroke="currentColor" stroke-width="3" fill="none"/></svg>
+          <h3>Three chart types, done well</h3>
+          <p>Bar, line and pie cover most business questions. Each one is picked to suit the column you're charting.</p>
+        </article>
+        <article class="feat-card reveal">
+          <svg class="feat-icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="5" width="12" height="12" stroke="currentColor" stroke-width="3" fill="none"/><rect x="23" y="5" width="12" height="12" stroke="currentColor" stroke-width="3" fill="none"/><rect x="5" y="23" width="12" height="12" stroke="currentColor" stroke-width="3" fill="none"/><rect x="23" y="23" width="12" height="12" stroke="currentColor" stroke-width="3" fill="none"/></svg>
+          <h3>Drag charts into place</h3>
+          <p>Build the layout that matches how you actually read your numbers, then leave it exactly as you set it.</p>
+        </article>
+        <article class="feat-card reveal">
+          <svg class="feat-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 5 L20 25 M12 17 L20 25 L28 17" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 30 L34 30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          <h3>Export in one click</h3>
+          <p>Save your dashboard as an image for a deck, or as a standalone page you can send straight to a client.</p>
+        </article>
+        <article class="feat-card reveal">
+          <svg class="feat-icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="7" y="14" width="26" height="20" rx="2" stroke="currentColor" stroke-width="3" fill="none"/><path d="M13 14 V9 a7 7 0 0 1 14 0 v5" stroke="currentColor" stroke-width="3" fill="none"/></svg>
+          <h3>Nothing leaves your device</h3>
+          <p>CSV files and pasted rows are read by your own browser. You only need an account to save your work and have it remembered.</p>
+        </article>
+        <article class="feat-card reveal">
+          <svg class="feat-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M6 20 L34 20 M20 6 L20 34" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="3" fill="none"/></svg>
+          <h3>Try it before you sign up</h3>
+          <p>Load sample data on the spot. You only need an account when you're ready to save and share your work.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="compare reveal">
+      <h2 class="section-title">Where Ledgerview sits</h2>
+      <div class="compare-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr><th scope="col">&nbsp;</th><th scope="col">A blank spreadsheet</th><th scope="col">Ledgerview</th><th scope="col">A full BI platform</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Time to first chart</th><td>20–30 minutes</td><td class="hl">Under a minute</td><td>Days, with setup</td></tr>
+            <tr><th scope="row">Cost</th><td>Free</td><td class="hl">Free to start</td><td>Monthly, per seat</td></tr>
+            <tr><th scope="row">Learning curve</th><td>Pivot tables, formulas</td><td class="hl">None</td><td>Steep</td></tr>
+            <tr><th scope="row">Your data leaves your device</th><td>No</td><td class="hl">No</td><td>Usually, yes</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="cta-band cta-band-dark reveal">
+      <h2>See every feature in your own numbers.</h2>
+      <a class="btn btn-paper" href="#signup" data-view="signup">Start for free</a>
+    </section>
+  </section>
+
+  <!-- ============ SOLUTIONS ============ -->
+  <section id="view-solutions" class="view" hidden>
+    <div class="page-hero">
+      <h1 class="page-title">
+        <span class="line line-eyebrow"><span class="run">Solutions</span></span>
+        <span class="line line-big"><span class="run">LEDGERVIEW</span></span>
+      </h1>
+      <p class="page-sub">Dashboards shaped around your role and your industry, not a generic template.</p>
+      <p class="page-scroll">Scroll</p>
+    </div>
+
+    <section class="grid-section">
+      <div class="sol-controls">
+        <div class="sol-group" role="group" aria-label="Browse by">
+          <button type="button" class="sol-toggle is-active" data-group="role">By role</button>
+          <button type="button" class="sol-toggle" data-group="industry">By industry</button>
+        </div>
+        <div class="sol-chips" id="sol-chips" role="group" aria-label="Filter"></div>
+      </div>
+
+      <div class="sol-grid" id="sol-grid"></div>
+    </section>
+
+    <section class="cta-band cta-band-dark reveal">
+      <h2>Don't see your world here? It still fits.</h2>
+      <a class="btn btn-paper" href="#signup" data-view="signup">Build your own dashboard</a>
+    </section>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section id="view-pricing" class="view" hidden>
+    <div class="page-hero">
+      <h1 class="page-title">
+        <span class="line line-eyebrow"><span class="run">Pricing</span></span>
+        <span class="line line-big"><span class="run">LEDGERVIEW</span></span>
+      </h1>
+      <p class="page-sub">Simple plans that grow with your data, not your headcount.</p>
+      <p class="page-scroll">Scroll</p>
+    </div>
+
+    <section class="grid-section">
+      <div class="price-grid">
+        <article class="price-card reveal">
+          <h3>Free</h3>
+          <p class="price-amount">₹0<span>/month</span></p>
+          <p class="price-desc">For trying Ledgerview on real data.</p>
+          <ul class="price-list">
+            <li>Up to 3 sheets a month</li>
+            <li>Bar, line and pie charts</li>
+            <li>Export as an image</li>
+            <li>Ledgerview watermark on exports</li>
+          </ul>
+          <a class="btn btn-line btn-full" href="#signup" data-view="signup">Start for free</a>
+        </article>
+
+        <article class="price-card price-card-feature reveal">
+          <p class="price-badge">Most teams choose this</p>
+          <h3>Pro</h3>
+          <p class="price-amount">₹499<span>/month</span></p>
+          <p class="price-desc">For anyone who reports on numbers weekly.</p>
+          <ul class="price-list">
+            <li>Unlimited sheets</li>
+            <li>Every chart type, no watermark</li>
+            <li>Export as an image or a shareable page</li>
+            <li>Saved dashboards across sessions</li>
+          </ul>
+          <a class="btn btn-ink btn-full" href="#signup" data-view="signup">Start 14-day trial</a>
+        </article>
+
+        <article class="price-card reveal">
+          <h3>Business</h3>
+          <p class="price-amount">₹1,499<span>/month</span></p>
+          <p class="price-desc">For small teams sharing dashboards with clients.</p>
+          <ul class="price-list">
+            <li>Everything in Pro</li>
+            <li>Shared team workspace</li>
+            <li>Your logo on exported reports</li>
+            <li>Priority email support</li>
+          </ul>
+          <a class="btn btn-line btn-full" href="#signup" data-view="signup">Talk to us</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="faq reveal">
+      <h2 class="section-title">Questions, answered plainly</h2>
+      <div class="faq-list" id="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">Does my data ever leave my browser?</button>
+          <div class="faq-a"><p>CSV files and pasted rows are read and charted in your browser. Images are read on your device too, unless the site is running with AI reading switched on, in which case the image is sent to Claude to be read. If you log in while the backend is running, your saved dashboards and last session are stored on the server.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">Is there a limit on file size?</button>
+          <div class="faq-a"><p>Free handles sheets up to roughly 5,000 rows comfortably. Pro and Business raise that limit and load larger files faster.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">Can I cancel anytime?</button>
+          <div class="faq-a"><p>Yes. Cancelling stops the next billing cycle immediately; you keep access until the plan period you already paid for ends.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">Do you offer student pricing?</button>
+          <div class="faq-a"><p>The Free plan has no time limit and covers most coursework and personal projects, so most students never need to upgrade.</p></div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ============ SIGN UP / LOG IN ============ -->
+  <section id="view-signup" class="view" hidden>
+    <div class="page-hero page-hero-tight">
+      <h1 class="page-title">
+        <span class="line line-eyebrow"><span class="run">Account</span></span>
+        <span class="line line-big"><span class="run">LEDGERVIEW</span></span>
+      </h1>
+      <p class="page-sub">Sign up to save dashboards, or log in and pick up where you left off.</p>
+    </div>
+
+    <section class="signup-section">
+      <div class="signup-wrap">
+
+        <div class="auth-tabs" id="auth-tabs" role="tablist" aria-label="Account">
+          <button type="button" class="auth-tab is-active" data-auth-tab="signup" role="tab" aria-selected="true">Sign up</button>
+          <button type="button" class="auth-tab" data-auth-tab="login" role="tab" aria-selected="false">Log in</button>
+        </div>
+
+        <form class="signup-form" id="signup-form" novalidate>
+          <label>Full name
+            <input type="text" id="su-name" name="name" required autocomplete="name">
+          </label>
+          <label>Work email
+            <input type="email" id="su-email" name="email" required autocomplete="email">
+          </label>
+          <label>Company or project name
+            <input type="text" id="su-company" name="company" autocomplete="organization">
+          </label>
+          <label>Password
+            <input type="password" id="su-password" name="password" minlength="8" required autocomplete="new-password">
+            <span class="field-hint">At least 8 characters.</span>
+          </label>
+
+          <fieldset class="plan-fieldset">
+            <legend>Plan</legend>
+            <label class="plan-option"><input type="radio" name="plan" value="Free" checked><span>Free</span></label>
+            <label class="plan-option"><input type="radio" name="plan" value="Pro"><span>Pro — 14-day trial</span></label>
+            <label class="plan-option"><input type="radio" name="plan" value="Business"><span>Business</span></label>
+          </fieldset>
+
+          <p class="form-error" id="su-error" role="alert"></p>
+          <button class="btn btn-paper btn-full" type="submit">Create account</button>
+        </form>
+
+        <form class="signup-form" id="login-form" novalidate hidden>
+          <label>Email
+            <input type="email" id="li-email" name="email" required autocomplete="email">
+          </label>
+          <label>Password
+            <input type="password" id="li-password" name="password" required autocomplete="current-password">
+          </label>
+          <p class="form-error" id="li-error" role="alert"></p>
+          <button class="btn btn-paper btn-full" type="submit">Log in</button>
+          <p class="form-note">You stay logged in on this device until you log out.</p>
+        </form>
+
+        <div class="signup-success" id="signup-success" hidden>
+          <h2><span id="success-greet">Welcome back</span>, <span id="success-name"></span>.</h2>
+          <p>Your <span id="success-plan"></span> workspace is ready. <span id="success-msg"></span></p>
+          <a class="btn btn-paper" href="#dashboard" data-view="dashboard">Go to my dashboard</a>
+          <a class="btn btn-line" href="#profile" data-view="profile">Manage profile</a>
+          <button class="btn btn-line" type="button" id="auth-logout">Log out</button>
+        </div>
+
+        <p class="form-note" id="auth-note"></p>
+      </div>
+    </section>
+  </section>
+
+  <!-- ============ DASHBOARD BUILDER ============ -->
+  <section id="view-dashboard" class="view" hidden>
+    <div class="page-hero page-hero-tight">
+      <h1 class="page-title">
+        <span class="line line-eyebrow"><span class="run">Build one now</span></span>
+        <span class="line line-big line-big-brand"><span class="run">DASHBOARD</span></span>
+      </h1>
+      <p class="page-sub">Bring a spreadsheet, or just describe the numbers you want to see. Ledgerview builds the charts either way.</p>
+    </div>
+
+    <section class="dash-section">
+      <div class="dash-wrap">
+
+        <div class="dash-tabs" role="tablist" aria-label="Dashboard input method">
+          <button type="button" class="dash-tab is-active" id="dash-tab-data" data-tab="data" role="tab" aria-selected="true" aria-controls="dash-panel-data">From data</button>
+          <button type="button" class="dash-tab" id="dash-tab-prompt" data-tab="prompt" role="tab" aria-selected="false" aria-controls="dash-panel-prompt">From a prompt</button>
+        </div>
+
+        <div class="dash-panel" id="dash-panel-data" data-panel="data" role="tabpanel" aria-labelledby="dash-tab-data">
+          <div class="dash-drop" id="dash-drop" tabindex="0" role="button" aria-label="Drop a CSV file or an image of a table, or activate to browse">
+            <svg class="dash-drop-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 6 L20 26 M12 18 L20 26 L28 18" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 30 L7 33 a2 2 0 0 0 2 2 L31 35 a2 2 0 0 0 2 -2 L33 30" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+            <p class="dash-drop-title">Drop a CSV or an image of a table here, or <button type="button" id="dash-browse" class="dash-link-btn">browse a file</button></p>
+            <p class="dash-drop-sub">CSV, TSV, TXT · PNG, JPG, WebP screenshots or photos · or paste an image<span class="desk-only"> (Ctrl/⌘+V)</span></p>
+            <input type="file" id="dash-file" accept=".csv,.tsv,.txt,text/csv,text/plain,image/png,image/jpeg,image/webp,image/gif" hidden>
+          </div>
+
+          <p class="dash-status" id="dash-status" role="status" aria-live="polite" hidden></p>
+
+          <p class="dash-or">or paste rows directly — messy is fine, Ledgerview tidies it first</p>
+          <textarea id="dash-paste" class="dash-textarea" rows="6" spellcheck="false" placeholder="name,month,revenue&#10;Bakery A,Jan,24000&#10;Bakery A,Feb,31000&#10;Bakery A,Mar,28500"></textarea>
+
+          <div class="dash-actions">
+            <button type="button" class="btn btn-line" id="dash-sample-data">Load sample data</button>
+            <button type="button" class="btn btn-line" id="dash-sample-messy">Load messy sample</button>
+            <button type="button" class="btn btn-ink" id="dash-build-data">Build dashboard</button>
+          </div>
+          <p class="dash-error" id="dash-data-error" role="alert"></p>
+        </div>
+
+        <div class="dash-panel" id="dash-panel-prompt" data-panel="prompt" role="tabpanel" aria-labelledby="dash-tab-prompt" hidden>
+          <textarea id="dash-prompt" class="dash-textarea" rows="5" spellcheck="false" placeholder="e.g. Show 6 months of revenue for a coffee shop, roughly ₹40k to ₹90k, plus a breakdown of sales by channel: dine-in / takeaway / delivery. Loose wording, shorthand or pasted numbers are fine — Ledgerview organizes it first."></textarea>
+          <div class="dash-actions">
+            <button type="button" class="btn btn-line" id="dash-sample-prompt">Use an example</button>
+            <button type="button" class="btn btn-ink" id="dash-build-prompt">Generate dashboard</button>
+          </div>
+          <p class="dash-error" id="dash-prompt-error" role="alert"></p>
+          <p class="dash-mode-note" id="dash-prompt-note"></p>
+        </div>
+
+        <p class="dash-mode-note" id="dash-mode-note"></p>
+
+        <div class="dash-output" id="dash-output" hidden>
+          <div class="dash-output-head">
+            <h2 id="dash-output-title">Your dashboard</h2>
+            <div class="dash-output-actions">
+              <button type="button" class="btn btn-ink" id="dash-save">Save dashboard</button>
+              <button type="button" class="btn btn-line" id="dash-new">Start over</button>
+            </div>
+          </div>
+          <p class="dash-msg" id="dash-save-msg" role="status"></p>
+          <div class="dash-notes" id="dash-notes" hidden></div>
+          <div class="dash-stats" id="dash-stats"></div>
+          <div class="dash-insights" id="dash-insights" hidden></div>
+          <div class="dash-charts" id="dash-charts"></div>
+          <div class="dash-table-wrap" id="dash-table-wrap" hidden></div>
+        </div>
+
+        <div class="dash-saved" id="dash-saved-wrap" hidden>
+          <h2 class="section-title">Saved dashboards</h2>
+          <div class="dash-saved-list" id="dash-saved-list"></div>
+        </div>
+
+      </div>
+    </section>
+  </section>
+
+    <!-- ============ PROFILE ============ -->
+  <section id="view-profile" class="view" hidden>
+    <div class="page-hero page-hero-tight">
+      <h1 class="page-title">
+        <span class="line line-eyebrow"><span class="run">Your account</span></span>
+        <span class="line line-big"><span class="run">PROFILE</span></span>
+      </h1>
+      <p class="page-sub">Your details, plan, saved work and sign-in settings, all in one place.</p>
+    </div>
+
+    <section class="pf-section">
+      <div class="pf-wrap">
+
+        <!-- signed out -->
+        <div class="pf-guest" id="pf-guest" hidden>
+          <h2>Log in to see your profile</h2>
+          <p>Your plan, saved dashboards and remembered session live on your account.</p>
+          <div class="pf-row">
+            <a class="btn btn-paper" href="#login" data-view="signup" data-return="profile">Log in</a>
+            <a class="btn btn-line" href="#signup" data-view="signup" data-return="profile">Sign up</a>
+          </div>
+        </div>
+
+        <!-- signed in -->
+        <div id="pf-main" hidden>
+
+          <div class="pf-head">
+            <span class="pf-avatar" id="pf-avatar" aria-hidden="true"></span>
+            <div class="pf-head-text">
+              <h2 id="pf-name"></h2>
+              <p id="pf-email"></p>
+            </div>
+            <span class="pf-chip" id="pf-plan-chip"></span>
+          </div>
+
+          <!-- details -->
+          <section class="pf-card" aria-labelledby="pf-h-details">
+            <h3 id="pf-h-details">Your details</h3>
+            <form class="pf-form" id="pf-details-form" novalidate>
+              <label>Full name
+                <input type="text" id="pf-in-name" autocomplete="name" required>
+              </label>
+              <label>Email
+                <input type="email" id="pf-in-email" readonly aria-describedby="pf-email-hint">
+                <span class="field-hint" id="pf-email-hint">Your email is your login, so it can’t be changed here.</span>
+              </label>
+              <label>Company or project name
+                <input type="text" id="pf-in-company" autocomplete="organization">
+              </label>
+              <p class="pf-msg" id="pf-details-msg" role="status"></p>
+              <button class="btn btn-paper" type="submit">Save details</button>
+            </form>
+          </section>
+
+          <!-- subscription -->
+          <section class="pf-card" aria-labelledby="pf-h-plan" id="pf-plan-card">
+            <h3 id="pf-h-plan">Subscription</h3>
+            <p class="pf-lead" id="pf-plan-line"></p>
+            <div class="pf-plans" id="pf-plans"></div>
+            <p class="pf-msg" id="pf-plan-msg" role="status"></p>
+            <p class="pf-fine">Plan changes are saved to your account straight away. Payments aren’t connected in this version, so nothing is charged yet.</p>
+            <button type="button" class="pf-link-btn" id="pf-cancel-plan" hidden>Cancel subscription (go back to Free)</button>
+          </section>
+
+          <!-- saved data -->
+          <section class="pf-card" aria-labelledby="pf-h-data">
+            <h3 id="pf-h-data">Saved data</h3>
+
+            <h4 class="pf-sub">Saved dashboards <span class="pf-count" id="pf-dash-count"></span></h4>
+            <div class="pf-list" id="pf-dash-list"></div>
+
+            <h4 class="pf-sub">Remembered session</h4>
+            <p class="pf-lead" id="pf-session-line"></p>
+
+            <p class="pf-msg" id="pf-data-msg" role="status"></p>
+            <div class="pf-row">
+              <button type="button" class="btn btn-line" id="pf-clear-session">Clear remembered session</button>
+              <button type="button" class="btn btn-line" id="pf-delete-all">Delete all saved dashboards</button>
+              <button type="button" class="btn btn-paper" id="pf-export">Download all my data</button>
+            </div>
+          </section>
+
+          <!-- login & security -->
+          <section class="pf-card" aria-labelledby="pf-h-sec">
+            <h3 id="pf-h-sec">Login &amp; security</h3>
+
+            <form class="pf-form" id="pf-pw-form" novalidate>
+              <label>Current password
+                <input type="password" id="pf-pw-current" autocomplete="current-password" required>
+              </label>
+              <label>New password
+                <input type="password" id="pf-pw-new" autocomplete="new-password" minlength="8" required>
+                <span class="field-hint">At least 8 characters.</span>
+              </label>
+              <label>Confirm new password
+                <input type="password" id="pf-pw-confirm" autocomplete="new-password" required>
+              </label>
+              <p class="pf-msg" id="pf-pw-msg" role="status"></p>
+              <button class="btn btn-paper" type="submit">Change password</button>
+            </form>
+
+            <h4 class="pf-sub">Sessions</h4>
+            <p class="pf-lead" id="pf-session-where"></p>
+            <div class="pf-row">
+              <button type="button" class="btn btn-line" id="pf-logout">Log out</button>
+              <button type="button" class="btn btn-line" id="pf-logout-all">Log out of all devices</button>
+            </div>
+          </section>
+
+          <!-- danger zone -->
+          <section class="pf-card pf-danger" aria-labelledby="pf-h-danger">
+            <h3 id="pf-h-danger">Delete account</h3>
+            <p class="pf-lead">This permanently removes your account, your saved dashboards and your remembered session. It can’t be undone.</p>
+            <form class="pf-form" id="pf-delete-form" novalidate>
+              <label>Enter your password to confirm
+                <input type="password" id="pf-del-pw" autocomplete="current-password" required>
+              </label>
+              <p class="pf-msg" id="pf-del-msg" role="status"></p>
+              <button class="btn pf-btn-danger" type="submit">Delete my account</button>
+            </form>
+          </section>
+
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="view-about" class="view" hidden>
+    <div class="page-hero">
+      <h1 class="page-title">
+        <span class="line line-eyebrow"><span class="run">About</span></span>
+        <span class="line line-big"><span class="run">LEDGERVIEW</span></span>
+      </h1>
+      <p class="page-sub">Built for small teams who deserve clear numbers, not a data team.</p>
+      <p class="page-scroll">Scroll</p>
+    </div>
+
+    <section class="about-body">
+      <p class="about-lead reveal">Most small businesses already have the data they need. It's sitting
+        in a CSV export, a billing tool, or a folder of spreadsheets nobody has opened since
+        the quarter it was made. Ledgerview exists to close that one small, expensive gap between
+        having the numbers and actually seeing them.</p>
+
+      <p class="about-body-text reveal">We built it after watching the same pattern play out with
+        freelancers, small shop owners and student teams alike: real data, no time to learn a full
+        analytics platform, and no budget for one either. So Ledgerview does one job — turn a
+        spreadsheet into a dashboard — and tries to do it without asking anything of you first.</p>
+
+      <div class="about-stats">
+        <div class="about-stat reveal"><span class="stat-num">0</span><span class="stat-label">servers your data touches</span></div>
+        <div class="about-stat reveal"><span class="stat-num">3</span><span class="stat-label">chart types, chosen well</span></div>
+        <div class="about-stat reveal"><span class="stat-num">1</span><span class="stat-label">file needed to start</span></div>
+      </div>
+
+      <p class="about-body-text reveal">We'd rather stay small and useful than broad and complicated —
+        so if a feature doesn't help you get from spreadsheet to decision faster, it doesn't make it in.</p>
+    </section>
+
+    <section class="cta-band reveal">
+      <h2>Bring your own numbers.</h2>
+      <a class="btn btn-ink" href="#signup" data-view="signup">Create your first dashboard</a>
+    </section>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <a class="wordmark" href="#home"><span class="wordmark-dot" aria-hidden="true"></span>Ledgerview</a>
+    <p class="footer-tag">A spreadsheet, seen clearly.</p>
+  </div>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#about">About</a>
+    <a href="#signup">Sign up</a>
+    <a href="#login">Log in</a>
+    <a href="#profile">Profile</a>
+  </nav>
+  <p class="footer-fine">Runs in your browser. With the optional backend, accounts and saved dashboards are stored on your own server.</p>
+
+  <div class="footer-meta">
+    <a class="footer-mail" href="mailto:shaikmoulali.0309@gmail.com">shaikmoulali.0309@gmail.com</a>
+    <p class="footer-copy">&copy; <span id="footer-year">2026</span> Shaik Moulali. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="organizer.js"></script>
+<script src="script.js"></script>
+<script src="auth.js"></script>
+<script src="dashboard.js"></script>
+<script src="profile.js"></script>
+</body>
+</html>
